@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Random;
 
 public class Stemming {
 
@@ -8,15 +9,29 @@ public class Stemming {
     private int[][] stembiljetten = new int[50][2];
 
     public void randomStemming() {
-        //Vul de stembiljetten array random met partij en kandidaten
-        for (int i = 0; i < stembiljetten.length; i++) {
-            //Random 0-2 voor partij
-            stembiljetten[i][0] = ((int) (Math.random() * 3));
+        List<Partij> partijlijst = kieslijst.getPartijlijst();
+        for (int i=0; i <stembiljetten.length; i++) {
+            Random r = new Random(3);
+            int randomNumber = r.nextInt(partijlijst.size());
+            System.out.println(randomNumber);
+
+            List<Partij> kieslijstKanditaten = kieslijst.getPartijlijst();
+            Partij p = kieslijstKanditaten.get(randomNumber);
+            for (int j = 0; j < p.getKandidaten().size(); j++) {
+                // for (int stemCount = 0; stemCount < stembiljetten.length; stemCount++) {
+                System.out.print(p.getKandidaten().get(j).getNaam() + " ");
+                //  }
+            }
         }
-        for (int j = 0; j < stembiljetten.length; j++) {
-            //Random 0-1 voor kandidaat stem;
-            stembiljetten[j][1] = ((int) (Math.random() * 15));
-        }
+//        //Vul de stembiljetten array random met partij en kandidaten
+//        for (int i = 0; i < stembiljetten.length; i++) {
+//            //Random 0-2 voor partij
+//            stembiljetten[i][0] = ((int) (Math.random() * 3));
+//        }
+//        for (int j = 0; j < stembiljetten.length; j++) {
+//            //Random 0-1 voor kandidaat stem;
+//            stembiljetten[j][1] = ((int) (Math.random() * 15));
+//        }
 //        for (int k=0; k < stembiljetten.length; k++){
 //            for (int l =0; l < stembiljetten[k].length; l++){
 //                System.out.println(stembiljetten[k][l]);
