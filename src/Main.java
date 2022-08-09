@@ -4,9 +4,8 @@ public class Main {
 
         Kieslijst kieslijst = new Kieslijst();
 
-        Partij pvda = new Partij();
-        pvda.setNaam("PVDA");
-        kieslijst.setPartijlijst(pvda);
+        Partij pvda = new Partij("PVDA");
+        kieslijst.addPartij(pvda);
 
         Kandidaat Jan = new Kandidaat("Jan");
         pvda.addKandidaat(Jan);
@@ -24,9 +23,8 @@ public class Main {
         pvda.addKandidaat(Gerry);
 
 
-        Partij cda = new Partij();
-        cda.setNaam("CDA");
-        kieslijst.setPartijlijst(cda);
+        Partij cda = new Partij("CDA");
+        kieslijst.addPartij(cda);
 
         Kandidaat Lies  = new Kandidaat("Lies");
         cda.addKandidaat(Lies );
@@ -40,9 +38,9 @@ public class Main {
         Kandidaat Hannie = new Kandidaat("Hannie");
         cda.addKandidaat(Hannie);
 
-        Partij vvd = new Partij();
-        vvd.setNaam("VVD");
-        kieslijst.setPartijlijst(vvd);
+        Partij vvd = new Partij("VVD");
+
+        kieslijst.addPartij(vvd);
 
         Kandidaat Lubbers = new Kandidaat("Lubbers");
         vvd.addKandidaat(Lubbers);
